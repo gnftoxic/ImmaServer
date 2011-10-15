@@ -55,12 +55,13 @@ public class ClientReader implements Runnable
                         }
                         break;
                     case 0x1010:
-                        PacketChannelKnock p10 = new PacketChannelKnock(_client, _client._server);
+                        PacketUserListResponse p10 = new PacketUserListResponse(_client, _client._server);
                         p10.read(_reader);
                         break;
                         
                     case 0x0011: // User Info
-                    case 0x1011: // Channel Knock
+                    case 0x1011: // Room List Response
+                    case 0x1021: // Room User List Response
                     case 0xFFFF: // Disconnect (forced by server)
                         break;
                         

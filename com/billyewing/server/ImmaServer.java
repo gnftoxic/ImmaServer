@@ -1,6 +1,6 @@
 package com.billyewing.server;
 
-import com.billyewing.server.chat.Channel;
+import com.billyewing.server.chat.Room;
 import com.billyewing.server.logging.ServerFilter;
 import com.billyewing.server.logging.ServerFormatter;
 import com.billyewing.server.logging.ServerHandler;
@@ -22,7 +22,7 @@ public class ImmaServer
     public Properties _config;
     public Logger _log;
     public ArrayList<Client> _clients;
-    public ArrayList<Channel> _channels;
+    public ArrayList<Room> _channels;
     
     public static void main(String[] args)
     {
@@ -41,7 +41,7 @@ public class ImmaServer
         doConfig();
         
         _clients = new ArrayList<Client>();
-        _channels = new ArrayList<Channel>();
+        _channels = new ArrayList<Room>();
         
         _log.info("Starting network handler");
         _net = new NetHandler(this);

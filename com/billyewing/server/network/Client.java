@@ -1,7 +1,7 @@
 package com.billyewing.server.network;
 
 import com.billyewing.server.ImmaServer;
-import com.billyewing.server.chat.Channel;
+import com.billyewing.server.chat.Room;
 import com.billyewing.server.chat.UserStatus;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -21,7 +21,7 @@ public class Client
     protected Socket _sock;
     protected String _name;
     protected int _id;
-    protected Map<Channel, UserStatus> _channels;
+    protected Map<Room, UserStatus> _channels;
     protected DataInputStream _input;
     protected DataOutputStream _output;
     private Thread _readerThread;
